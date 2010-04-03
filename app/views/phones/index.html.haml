@@ -1,0 +1,15 @@
+- title "Phones"
+
+%table
+  %tr
+    %th Name
+    %th Phone
+  - for phone in @phones
+    %tr
+      %td= h phone.name
+      %td= h phone.phone
+      %td= link_to 'Show', phone
+      %td= link_to 'Edit', edit_phone_path(phone)
+      %td= link_to 'Destroy', phone, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Phone", new_phone_path

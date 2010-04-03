@@ -1,0 +1,12 @@
+- form_for @phone do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :phone
+    %br
+    = f.text_area :phone
+  %p
+    = f.submit "Submit"

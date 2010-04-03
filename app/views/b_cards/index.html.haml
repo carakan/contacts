@@ -1,0 +1,15 @@
+- title "B Cards"
+
+%table
+  %tr
+    %th Company
+    %th Description
+  - for b_card in @b_cards
+    %tr
+      %td= h b_card.company
+      %td= h b_card.description
+      %td= link_to 'Show', b_card
+      %td= link_to 'Edit', edit_b_card_path(b_card)
+      %td= link_to 'Destroy', b_card, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New B Card", new_b_card_path

@@ -1,0 +1,2 @@
+module BCardsHelper
+end

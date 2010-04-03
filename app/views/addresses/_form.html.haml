@@ -1,0 +1,12 @@
+- form_for @address do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :address
+    %br
+    = f.text_area :address
+  %p
+    = f.submit "Submit"

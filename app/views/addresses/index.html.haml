@@ -1,0 +1,15 @@
+- title "Addresses"
+
+%table
+  %tr
+    %th Name
+    %th Address
+  - for address in @addresses
+    %tr
+      %td= h address.name
+      %td= h address.address
+      %td= link_to 'Show', address
+      %td= link_to 'Edit', edit_address_path(address)
+      %td= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Address", new_address_path

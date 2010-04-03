@@ -1,0 +1,15 @@
+- title "Address"
+
+%p
+  %strong Name:
+  =h @address.name
+%p
+  %strong Address:
+  =h @address.address
+
+%p
+  = link_to "Edit", edit_address_path(@address)
+  |
+  = link_to "Destroy", @address, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", addresses_path

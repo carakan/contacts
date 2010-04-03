@@ -1,0 +1,15 @@
+- title "B Card"
+
+%p
+  %strong Company:
+  =h @b_card.company
+%p
+  %strong Description:
+  =h @b_card.description
+
+%p
+  = link_to "Edit", edit_b_card_path(@b_card)
+  |
+  = link_to "Destroy", @b_card, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", b_cards_path

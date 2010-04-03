@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts.paginate(:page => params['page'], :per_page => 20)
   end
   
   def show
@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
   
   def create
     @contact = Contact.new(params[:contact])
+    @contact.user = current_user
     if @contact.save
       flash[:notice] = "Successfully created contact."
       redirect_to @contact

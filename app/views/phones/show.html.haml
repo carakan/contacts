@@ -1,0 +1,15 @@
+- title "Phone"
+
+%p
+  %strong Name:
+  =h @phone.name
+%p
+  %strong Phone:
+  =h @phone.phone
+
+%p
+  = link_to "Edit", edit_phone_path(@phone)
+  |
+  = link_to "Destroy", @phone, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", phones_path
