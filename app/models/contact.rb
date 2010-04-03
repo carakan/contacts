@@ -9,5 +9,5 @@ class Contact < ActiveRecord::Base
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
 
-  
+  has_and_belongs_to_many(:lists, :join_table => "list_contacts")
 end

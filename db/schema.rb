@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100403212044) do
+ActiveRecord::Schema.define(:version => 20100403231045) do
 
 # Could not dump table "addresses" because of following StandardError
 #   Unknown type 'id' for column 'contact_id'
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(:version => 20100403212044) do
     t.integer  "user_id"
     t.string   "company_name"
     t.string   "type_name"
+  end
+
+  create_table "list_contacts", :force => true do |t|
+    t.integer "list_id"
+    t.integer "contact_id"
+  end
+
+  create_table "lists", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 # Could not dump table "phones" because of following StandardError

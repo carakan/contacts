@@ -61,3 +61,11 @@ a {
     #errorExplanation ul li {
       font-size: 12px;
       list-style: disc; }
+
+ul.menu{
+  width: 500px;
+}
+ul.menu{
+  float: left;
+  padding: 5px 20px;
+}
