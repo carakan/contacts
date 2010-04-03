@@ -1,18 +1,19 @@
 body {
   background-color: #4b7399;
   font-family: Verdana, Helvetica, Arial;
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 a {
   color: #0000FF; }
-  a img {
-    border: none; }
-
+a img {
+  border: none;
+}
 .clear {
   clear: both;
   height: 0;
-  overflow: hidden; }
-
+  overflow: hidden;
+}
 #container {
   width: 75%;
   margin: 0 auto;
@@ -65,7 +66,11 @@ a {
 ul.menu{
   width: 500px;
 }
-ul.menu{
+ul.menu li{
   float: left;
   padding: 5px 20px;
+  list-style: none;
+}
+.clear{
+    clear: both;
 }

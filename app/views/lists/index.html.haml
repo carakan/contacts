@@ -1,0 +1,12 @@
+- title "Lists"
+
+%table
+  %tr
+    %th Name
+  - for list in @lists
+    %tr
+      %td= h list.name
+      %td= link_to 'Show', list
+      %td= link_to 'Destroy', list, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New List", new_list_path
