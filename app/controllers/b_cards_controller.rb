@@ -1,6 +1,6 @@
 class BCardsController < ApplicationController
   def index
-    @b_cards = BCard.all
+    @b_cards = current_user.bussiness_cards.paginate(:page => params['page'], :per_page => 20)
   end
   
   def show

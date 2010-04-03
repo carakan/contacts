@@ -4,6 +4,5 @@ class User < ActiveRecord::Base
   end
 
   has_many :contacts
-  has_many :b_cards
-  
+  has_many :bussiness_cards, :class_name => 'BCard'
 end

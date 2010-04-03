@@ -6,7 +6,7 @@
     %th Description
   - for b_card in @b_cards
     %tr
-      %td= h b_card.company
+      %td= h b_card.company_name
       %td= h b_card.description
       %td= link_to 'Show', b_card
       %td= link_to 'Edit', edit_b_card_path(b_card)
