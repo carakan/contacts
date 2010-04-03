@@ -1,0 +1,3 @@
+== contacts manage
+
+This is application for manage simple list of contacts

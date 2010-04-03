@@ -42,4 +42,10 @@ class ContactsController < ApplicationController
     flash[:notice] = "Successfully destroyed contact."
     redirect_to contacts_url
   end
+
+  def alphabet
+    @contacts = current_user.contacts.paginate(:page => params['page'], :per_page => 20,
+                                               :conditions => "name LIKE '#{params[:letter]}%'")
+    render :action => 'index'
+  end
 end

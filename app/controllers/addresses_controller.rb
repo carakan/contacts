@@ -1,7 +1,7 @@
 class AddressesController < ApplicationController
   def index
     bussiness_card = current_user.bussiness_cards.find(params[:b_card_id])
-    @addresses = bussiness_card.addresses.all
+    @addresses = bussiness_card.addresses.paginate(:page => params['page'], :per_page => 20)
   end
   
   def show

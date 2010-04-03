@@ -12,4 +12,6 @@
       %td= link_to 'Edit', edit_b_card_address_path(params[:b_card_id], address)
       %td= link_to 'Destroy', b_card_address_path(params[:b_card_id], address), :confirm => 'Are you sure?', :method => :delete
 
+  = will_paginate @addresses
+
 %p= link_to "New Address", new_b_card_address_path(params[:b_card_id])
