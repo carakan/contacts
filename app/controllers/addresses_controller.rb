@@ -13,9 +13,10 @@ class AddressesController < ApplicationController
   
   def create
     @address = Address.new(params[:address])
+    @address.bussiness_card = BCard.find(params[:b_card_id])
     if @address.save
       flash[:notice] = "Successfully created address."
-      redirect_to @address
+      redirect_to(b_card_addresses_url(params[:b_card_id]))
     else
       render :action => 'new'
     end
@@ -29,7 +30,7 @@ class AddressesController < ApplicationController
     @address = Address.find(params[:id])
     if @address.update_attributes(params[:address])
       flash[:notice] = "Successfully updated address."
-      redirect_to @address
+      redirect_to b_card_addressess_url(params[:b_card_id])
     else
       render :action => 'edit'
     end

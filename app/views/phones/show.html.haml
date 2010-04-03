@@ -8,8 +8,8 @@
   =h @phone.phone
 
 %p
-  = link_to "Edit", edit_phone_path(@phone)
+  = link_to "Edit", edit_b_card_phone_path(@phone)
   |
-  = link_to "Destroy", @phone, :confirm => 'Are you sure?', :method => :delete
+  = link_to "Destroy", b_card_phone_path(@phone, :confirm => 'Are you sure?', :method => :delete)
   |
-  = link_to "View All", phones_path
+  = link_to "View All", b_card_phones_path(params[:b_card_id])

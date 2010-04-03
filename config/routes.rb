@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :addresses
 
-  map.resources :b_cards, :has_many => {:addresses, :phones}
+  map.resources :b_cards, :has_many => [:addresses, :phones]
 
   map.resources :contacts
 

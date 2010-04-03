@@ -13,6 +13,7 @@ class BCardsController < ApplicationController
   
   def create
     @b_card = BCard.new(params[:b_card])
+    @b_card.user = current_user
     if @b_card.save
       flash[:notice] = "Successfully created bussiness card."
       redirect_to @b_card

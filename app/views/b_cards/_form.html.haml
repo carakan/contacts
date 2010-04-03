@@ -1,9 +1,13 @@
-- form_for @b_card do |f|
+- form_for @b_card, :html => {:multipart => true} do |f|
   = f.error_messages
   %p
     = f.label :company_name
     %br
     = f.text_field :company_name
+  %p
+    = f.label :photo
+    %br
+    = f.file_field :photo
   %p
     = f.label :description
     %br

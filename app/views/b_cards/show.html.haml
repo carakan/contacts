@@ -2,7 +2,8 @@
 
 %p
   %strong Company:
-  =h @b_card.company
+  =h @b_card.company_name
+  = image_tag(@b_card.photo.url(:small))
 %p
   %strong Description:
   =h @b_card.description

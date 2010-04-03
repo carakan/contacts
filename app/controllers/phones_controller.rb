@@ -13,6 +13,7 @@ class PhonesController < ApplicationController
   
   def create
     @phone = Phone.new(params[:phone])
+    @phone .bussiness_card = BCard.find(params[:b_card_id])
     if @phone.save
       flash[:notice] = "Successfully created phone."
       redirect_to @phone
