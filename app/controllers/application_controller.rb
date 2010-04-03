@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper :all
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
+  before_filter :require_user
 
   private
     def current_user_session
@@ -30,7 +31,7 @@ class ApplicationController < ActionController::Base
       if current_user
         store_location
         flash[:notice] = "You must be logged out to access this page"
-        redirect_to account_url
+        redirect_to root_url
         return false
       end
     end
