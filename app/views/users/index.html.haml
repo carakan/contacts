@@ -1,0 +1,13 @@
+- title "Users"
+
+%table
+  %tr
+    %th Name
+  - for users in @users
+    %tr
+      %td= h users.name
+      %td= link_to 'Show', users
+      %td= link_to 'Edit', edit_users_path(users)
+      %td= link_to 'Destroy', users, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Users", new_users_path

@@ -1,0 +1,14 @@
+- title "Login"
+
+- form_for @user_session, :url => user_session_path do |f|
+    = f.error_messages
+    %p
+        = label_tag 'login'
+        = text_field :user_session, :login
+    %p
+        = label_tag :password
+        = text_field :user_session, :password
+
+    = f.submit "Login"
+
+%p= link_to "Back to List", root_path
