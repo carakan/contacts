@@ -1,0 +1,21 @@
+- title "Contacts"
+
+%table
+  %tr
+    %th 
+    %th Name
+    %th Email
+    %th Description
+    %th Phone
+  - for contact in @contacts
+    %tr
+      %td=  image_tag(contact.photo.url(:small))
+      %td= h contact.name
+      %td= h contact.email
+      %td= h contact.description
+      %td= h contact.phone
+      %td= link_to 'Show', contact
+      %td= link_to 'Edit', edit_contact_path(contact)
+      %td= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Contact", new_contact_path
