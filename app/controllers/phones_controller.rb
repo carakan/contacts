@@ -1,6 +1,7 @@
 class PhonesController < ApplicationController
   def index
-    @phones = Phone.all
+    bussiness_card = current_user.bussiness_cards.find(params[:b_card_id])
+    @phones = bussiness_card.phones.all
   end
   
   def show
@@ -13,10 +14,10 @@ class PhonesController < ApplicationController
   
   def create
     @phone = Phone.new(params[:phone])
-    @phone .bussiness_card = BCard.find(params[:b_card_id])
+    @phone.bussiness_card = BCard.find(params[:b_card_id])
     if @phone.save
       flash[:notice] = "Successfully created phone."
-      redirect_to @phone
+      redirect_to b_card_phones_url(params[:b_card_id])
     else
       render :action => 'new'
     end
@@ -30,7 +31,7 @@ class PhonesController < ApplicationController
     @phone = Phone.find(params[:id])
     if @phone.update_attributes(params[:phone])
       flash[:notice] = "Successfully updated phone."
-      redirect_to @phone
+      redirect_to b_card_phone_path(params[:b_card_id], @phone)
     else
       render :action => 'edit'
     end
@@ -40,6 +41,6 @@ class PhonesController < ApplicationController
     @phone = Phone.find(params[:id])
     @phone.destroy
     flash[:notice] = "Successfully destroyed phone."
-    redirect_to phones_url
+    redirect_to b_card_phones_url(params[:b_card_id])
   end
 end

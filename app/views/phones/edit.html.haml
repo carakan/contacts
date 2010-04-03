@@ -1,6 +1,6 @@
 - title "Edit Phone"
-
-= render :partial => 'form'
+- form_for @phone, :url => b_card_phone_path(params[:b_card_id], @phone) do |f|
+  = render :partial => 'form', :locals => {:f => f}
 
 %p
   = link_to "Show", phone_path(@phone)

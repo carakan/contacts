@@ -1,5 +1,5 @@
 - title "New Phone"
+- form_for @phone, :url => b_card_phones_path(params[:b_card_id]) do |f|
+  = render :partial => 'form', :locals => {:f => f}
 
-= render :partial => 'form'
-
-%p= link_to "Back to List", phones_path
+%p= link_to "Back to List", b_card_phones_path(params[:b_card_id])

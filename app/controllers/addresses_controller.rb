@@ -1,6 +1,7 @@
 class AddressesController < ApplicationController
   def index
-    @addresses = Address.all
+    bussiness_card = current_user.bussiness_cards.find(params[:b_card_id])
+    @addresses = bussiness_card.addresses.all
   end
   
   def show
@@ -30,7 +31,7 @@ class AddressesController < ApplicationController
     @address = Address.find(params[:id])
     if @address.update_attributes(params[:address])
       flash[:notice] = "Successfully updated address."
-      redirect_to b_card_addressess_url(params[:b_card_id])
+      redirect_to b_card_addresses_url(params[:b_card_id])
     else
       render :action => 'edit'
     end
@@ -40,6 +41,6 @@ class AddressesController < ApplicationController
     @address = Address.find(params[:id])
     @address.destroy
     flash[:notice] = "Successfully destroyed address."
-    redirect_to addresses_url
+    redirect_to b_card_addresses_url(params[:b_card_id])
   end
 end

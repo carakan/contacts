@@ -4,10 +4,10 @@ class BCard < Contact
 
   default_scope :conditions => {:type_name => 'bussiness'}
 
-  has_many :addressess
-  accepts_nested_attributes_for :addressess, :allow_destroy => true
+  has_many :addresses, :foreign_key => "contact_id"
+  accepts_nested_attributes_for :addresses, :allow_destroy => true
 
-  has_many :phones
+  has_many :phones, :foreign_key => "contact_id"
   accepts_nested_attributes_for :phones, :allow_destroy => true
 
   before_create :assing_to_card

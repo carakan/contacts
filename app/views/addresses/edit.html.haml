@@ -1,6 +1,6 @@
 - title "Edit Address"
-
-= render :partial => 'form'
+- form_for @address, :url => b_card_address_path(params[:b_card_id], @address) do |f|
+  = render :partial => 'form', :locals => {:f => f}
 
 %p
   = link_to "Show", address_path(@address)

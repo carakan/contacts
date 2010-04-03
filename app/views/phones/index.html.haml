@@ -8,8 +8,8 @@
     %tr
       %td= h phone.name
       %td= h phone.phone
-      %td= link_to 'Show', phone
-      %td= link_to 'Edit', edit_phone_path(phone)
-      %td= link_to 'Destroy', phone, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Show', b_card_phone_path(params[:b_card_id], phone)
+      %td= link_to 'Edit', edit_phone_path(params[:b_card_id], phone)
+      %td= link_to 'Destroy', b_card_phone_path(params[:b_card_id], phone, :confirm => 'Are you sure?', :method => :delete)
 
-%p= link_to "New Phone", new_phone_path
+%p= link_to "New Phone", new_b_card_phone_path(params[:b_card_id])
