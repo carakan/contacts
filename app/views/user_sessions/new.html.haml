@@ -4,10 +4,10 @@
     = f.error_messages
     %p
         = label_tag 'login'
-        = text_field :user_session, :login
+        = f.text_field :login
     %p
         = label_tag :password
-        = text_field :user_session, :password
+        = f.text_field :password
 
     = f.submit "Login"
 

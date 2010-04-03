@@ -1,4 +1,5 @@
 config/database.yml
+*.sqlite3
 nbproject/*
 tmp/*
 log/*
