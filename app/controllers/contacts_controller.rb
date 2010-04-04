@@ -1,6 +1,10 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = current_user.contacts.paginate(:page => params['page'], :per_page => 20)
+    if params[:list_id]
+      @contacts = current_user.lists.first(params[:list_id]).contacts.paginate(:page => params['page'], :per_page => 20)
+    else
+      @contacts = current_user.contacts.paginate(:page => params['page'], :per_page => 20)
+    end
   end
   
   def show
@@ -45,7 +49,7 @@ class ContactsController < ApplicationController
 
   def alphabet
     @contacts = current_user.contacts.paginate(:page => params['page'], :per_page => 20,
-                                               :conditions => "name LIKE '#{params[:letter]}%'")
+      :conditions => "name LIKE '#{params[:letter]}%'")
     render :action => 'index'
   end
 end

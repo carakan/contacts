@@ -6,7 +6,9 @@
   - for list in @lists
     %tr
       %td= h list.name
+      %td= link_to 'Contacts', list_contacts_path(list)
       %td= link_to 'Show', list
       %td= link_to 'Destroy', list, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Export', list
 
 %p= link_to "New List", new_list_path

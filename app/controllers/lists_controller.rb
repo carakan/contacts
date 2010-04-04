@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.all
+    @lists = current_user.lists.paginate(:page => params['page'], :per_page => 20)
   end
   
   def show
@@ -13,6 +13,7 @@ class ListsController < ApplicationController
   
   def create
     @list = List.new(params[:list])
+    @list.user = current_user
     if @list.save
       flash[:notice] = "Successfully created list."
       redirect_to @list

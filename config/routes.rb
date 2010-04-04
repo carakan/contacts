@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :lists
+  map.resources :lists, :has_many => [:contacts]
 
   map.resources :phones
 

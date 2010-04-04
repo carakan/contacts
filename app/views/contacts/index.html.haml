@@ -1,26 +1,30 @@
+%div.alphabetical= alphabetic_list
+
 - title "Contacts"
 
-%table
-  %tr
-    %th 
-    %th Name
-    %th Email
-    %th Description
-    %th Phone
-  - for contact in @contacts
+- if @contacts.empty?
+  %h4 Empty
+- else
+  %table
     %tr
-      %td=  image_tag(contact.photo.url(:small))
-      %td= h contact.name
-      %td= h contact.email
-      %td= h contact.description
-      %td= h contact.phone
-      %td= h contact.lists
-      %td= link_to 'Show', contact
-      %td= link_to 'Edit', edit_contact_path(contact)
-      %td= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete
+      %th
+      %th Name
+      %th Email
+      %th Description
+      %th Phone
+    - for contact in @contacts
+      %tr
+        %td=  image_tag(contact.photo.url(:small))
+        %td= h contact.name
+        %td= h contact.email
+        %td= h contact.description
+        %td= h contact.phone
+        %td= h contact.lists
+        %td= link_to 'Show', contact
+        %td= link_to 'Edit', edit_contact_path(contact)
+        %td= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete
+      = will_paginate @contacts
 
-    = will_paginate @contacts
-
-= alphabetic_list
+%div.alphabetical= alphabetic_list
 
 %p= link_to "New Contact", new_contact_path

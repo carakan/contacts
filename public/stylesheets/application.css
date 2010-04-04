@@ -65,12 +65,22 @@ a img {
 
 ul.menu{
   width: 500px;
+  margin: 0;
+  padding: 0;
 }
 ul.menu li{
   float: left;
-  padding: 5px 20px;
+  padding: 5px 0;
+  padding-right: 20px;
   list-style: none;
 }
 .clear{
     clear: both;
+}
+.alphabetical{
+    width: 650px;
+    margin: 20px auto;
+}
+td{
+    padding: 5px;
 }
