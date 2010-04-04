@@ -1,0 +1,25 @@
+- title "Contacts"
+
+- if @contacts.empty?
+  %h4 Empty
+- else
+  - form_tag assing_list_path(params[:id]) do
+    %table
+      %tr
+        %th 
+        %th Name
+        %th Email
+        %th Description
+        %th Phone
+      - for contact in @contacts
+        %tr
+          %td= check_box_tag('contacts[]', contact.id, @list.contact_ids.include?(contact.id))
+          %td= h contact.name
+          %td= h contact.email
+          %td= h contact.description
+          %td= h contact.phone
+          %td= h contact.lists
+
+    = submit_tag 'Update'
+
+

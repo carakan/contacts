@@ -78,9 +78,13 @@ ul.menu li{
     clear: both;
 }
 .alphabetical{
-    width: 650px;
+    width: 680px;
     margin: 20px auto;
 }
 td{
     padding: 5px;
+}
+.list{
+  font-size: 8px;
+  font-weight: bold;
 }

@@ -42,4 +42,15 @@ class ListsController < ApplicationController
     flash[:notice] = "Successfully destroyed list."
     redirect_to lists_url
   end
+
+  def adding
+    @list = current_user.lists.find(params[:id])
+    @contacts = current_user.contacts.all
+  end
+
+  def assing
+    @list = current_user.lists.find(params[:id])
+    @list.contact_ids = params[:contacts]
+    redirect_to list_path(params[:id])
+  end
 end

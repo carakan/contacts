@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :lists, :has_many => [:contacts]
+  map.resources :lists, :has_many => [:contacts], :member => {:adding => :get, :assing => :post}
 
   map.resources :phones
 
@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
 
   map.resource :user_session
+  
   map.root :controller => "contacts"
 
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'

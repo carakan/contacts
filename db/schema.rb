@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20100404000449) do
     t.string   "type_name"
   end
 
-  create_table "list_contacts", :force => true do |t|
+  create_table "list_contacts", :id => false, :force => true do |t|
     t.integer "list_id"
     t.integer "contact_id"
   end

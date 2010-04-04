@@ -5,7 +5,7 @@ class CreateLists < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :list_contacts do |t|
+    create_table :list_contacts, :id => false do |t|
       t.integer :list_id, :contact_id
     end
   end
