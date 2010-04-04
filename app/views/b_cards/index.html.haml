@@ -1,4 +1,4 @@
-- title "B Cards"
+- title "Bussiness Cards"
 
 %table
   %tr
@@ -10,7 +10,7 @@
       %td= image_tag(b_card.photo.url(:small))
       %td= h b_card.company_name
       %td= h b_card.description
-      %td= link_to 'Adressess', b_card_addresses_path(b_card)
+      %td= link_to 'Adresses', b_card_addresses_path(b_card)
       %td= link_to 'Phones', b_card_phones_path(b_card)
       %td= link_to 'Show', b_card
       %td= link_to 'Edit', edit_b_card_path(b_card)
@@ -18,4 +18,4 @@
 
   = will_paginate @b_cards
 
-%p= link_to "New B Card", new_b_card_path
+%p= link_to "New Bussines Card", new_b_card_path

@@ -16,7 +16,7 @@ class ListsController < ApplicationController
     @list.user = current_user
     if @list.save
       flash[:notice] = "Successfully created list."
-      redirect_to @list
+      redirect_to lists_url
     else
       render :action => 'new'
     end

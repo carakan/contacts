@@ -85,6 +85,10 @@ td{
     padding: 5px;
 }
 .list{
-  font-size: 8px;
+  font-size: 10px;
   font-weight: bold;
+}
+textarea {
+  width: 500px;
+  height: 100px;
 }

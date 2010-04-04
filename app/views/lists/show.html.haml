@@ -9,3 +9,5 @@
   = link_to "Destroy", @list, :confirm => 'Are you sure?', :method => :delete
   |
   = link_to "View All", lists_path
+  |
+  = link_to "View contacts", list_contacts_path(params[:id])

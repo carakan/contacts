@@ -8,7 +8,6 @@
     %tr
       %td= h address.name
       %td= h address.address
-      %td= link_to 'Show', b_card_address_path(params[:b_card_id], address)
       %td= link_to 'Edit', edit_b_card_address_path(params[:b_card_id], address)
       %td= link_to 'Destroy', b_card_address_path(params[:b_card_id], address), :confirm => 'Are you sure?', :method => :delete
 

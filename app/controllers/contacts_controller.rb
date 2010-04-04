@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
   def index
     if params[:list_id]
-      @contacts = current_user.lists.first(params[:list_id]).contacts.paginate(:page => params['page'], :per_page => 20)
+      @contacts = current_user.lists.find(params[:list_id]).contacts.paginate(:page => params['page'], :per_page => 20)
     else
       @contacts = current_user.contacts.paginate(:page => params['page'], :per_page => 20)
     end
